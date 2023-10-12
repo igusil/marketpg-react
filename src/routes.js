@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+//import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';  
 import { CircularProgress } from '@mui/material'
 
 const PrivateRoutes = ({ component: Component, ...rest}) => (
