@@ -1,15 +1,15 @@
-import React, {Component, Suspense, lazy} from 'react';
-import { BrowserRouter as Router, Route, Switch, redirect} from 'react-router-dom'
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import { CircularProgress } from '@mui/material'
 
 const PrivateRoutes = ({ component: Component, ...rest}) => (
     <Route 
         {...rest}
         render={props => (
-            (localStorage.getItem('acces_token')) ?
-                <Component {...props}/>
+            (localStorage.getItem('access_token')) ?
+                <Component {...props} />
             :
-                <redirect to="/login"/>
+                <Redirect to="/login"/>
         )}
     />
 )
@@ -26,3 +26,5 @@ const Routes = () => (
         </Suspense>
     </Router>
 )
+
+export default Routes;
