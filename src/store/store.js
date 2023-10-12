@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware } from 'redux'
-import reduxThunk from 'redux-thunk'
+import { legacy_createStore as createStore, applyMiddleware} from 'redux'
+import ReduxThunk from 'redux-thunk'
 import rootReducer from './reducers/rootReducers'
 
-let middleware = [reduxThunk]
+let middleware = [ReduxThunk]
 
 export const store = createStore(rootReducer, applyMiddleware(...middleware))
